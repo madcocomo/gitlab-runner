@@ -29,8 +29,8 @@ input the url, token, runner name, runner type (docker), default docker image
 5. Change the runner setting
 Edit the `config/config.toml`. Change the envrionment, memory, and volumes according to the config.toml file in project root.
 
-### Adjust the setting for your needs
-You can change the pre-load images and volumes for the project to be build.
-
 6. Enable the runner
 In the gitlab Seetings -- CI/CD -- Runners, you should see the runner is running now. Edit the runner, check the `Run untagged jobs` and save change.
+
+### Adjust the setting for your needs
+You can change the pre-load images and volumes for the project to be build.
