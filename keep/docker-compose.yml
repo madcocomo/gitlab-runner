@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+    gradle:
+      image: 'gradle:6.7-jdk11'
+    
+    runner:
+      image: 'gitlab/gitlab-runner:v14.6.0'
+
+    ruby:
+      image: 'ruby:2.7'
+
+    node:
+      image: 'node:12.22.7-stretch-slim'
+
+    tdengine:
+      image: 'tdengine/tdengine:2.2.2.10'
+
+    postgres:
+      image: 'postgres:9.6-alpine'
+
+    emqx:
+      image: 'emqx/emqx:4.3.10'
+
+    selenium:
+      image: 'selenium/standalone-chrome:4.0.0-beta-3-20210426'
+    
+    dind:
+      image: 'docker:20.10.7-dind'
+

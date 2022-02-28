@@ -1,0 +1,28 @@
+check_interval = 0
+
+[session_server]
+  session_timeout = 1800
+
+[[runners]]
+  name = "<self-host-runner-name>"
+  url = "https://jihulab.com/"
+  token = <"token">
+  executor = "docker"
+  environment = ["NODE_OPTIONS=--max-old-space-size=4096", "GRADLE_OPTS=-Xms1027m -Xmx4096m"]
+  [runners.custom_build_dir]
+  [runners.cache]
+    [runners.cache.s3]
+    [runners.cache.gcs]
+    [runners.cache.azure]
+  [runners.docker]
+    tls_verify = false
+    image = "ruby:2.7"
+    memory = "8192m"
+    memory_swap = "8192m"
+    privileged = false
+    disable_entrypoint_overwrite = true
+    oom_kill_disable = false
+    disable_cache = false
+    volumes = ["/var/run/docker.sock:/var/run/docker.sock", "/cache", "/root/gitlab-runner/gradle:/home/gradle/.gradle", "/root/gitlab-runner/npm:/root/.npm"]
+    shm_size = 0
+
